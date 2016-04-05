@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Bradley Delaune</string>
+	<key>Builder Version</key>
+	<string>11601.4.4</string>
+	<key>CFBundleDisplayName</key>
+	<string>Force Creds</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.delaunedevelopment.force-creds</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Database Quota</key>
+		<real>52428800</real>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>popover.html</string>
+				<key>Height</key>
+				<real>500</real>
+				<key>Identifier</key>
+				<string>logins</string>
+				<key>Width</key>
+				<real>400</real>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>loginsbtn</string>
+				<key>Image</key>
+				<string>sf_cloud.png</string>
+				<key>Label</key>
+				<string>SFDCreds</string>
+				<key>Palette Label</key>
+				<string>SFDCreds</string>
+				<key>Popover</key>
+				<string>logins</string>
+				<key>Tool Tip</key>
+				<string>Salesforce Logins</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict/>
+	</dict>
+	<key>DeveloperIdentifier</key>
+	<string>0000000000</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Level</key>
+			<string>None</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

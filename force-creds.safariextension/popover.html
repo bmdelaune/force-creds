@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html data-ng-app="sfdcCredsApp" ng-csp="">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"-->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/template.css" />
+		<!--script type="text/javascript" src="../js/storage.js"></script>
+		<script type="text/javascript" src="../js/popup.js"></script-->
+		<base target="_blank" />
+	</head>
+	<body data-ng-controller="loginListCtrl">
+		<!--Search: <input ng-model="query"-->
+		<!--button class="btn btn-primary" ng-click="popopen()"><span class="octicon octicon-link-external"></span></button-->
+		<div id="main-container" class="container-fluid">
+			<div class="row">
+				<div class="login-block" class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-xl-3" ng-repeat="group in groups">
+					<h4 class="">{{group}}</h4>
+					<div id="{{group}}">
+						<ul>
+							<li ng-repeat="(key,login) in logins | group:group" class="login-item">
+								<div class="btn-group btn-group-sm" role="group" aria-label="Login action group">
+									<!--button type="button" class="btn btn-primary" ng-click="openCred(login)">Tab</button-->
+									<button type="button" class="btn btn-link" ng-click="editLogin($parent.$index+'_'+$index)"><span id="edit_icon_{{$parent.$index+'_'+$index}}" class="edit_icon octicon octicon-pencil"></span></button>
+								</div>
+								<a class="btn btn-link" ng-click="openCred(login)">{{key}}</a>
+								<form id="edit_login_{{$parent.$index+'_'+$index}}" class="edit-login" ng-blur="blurLogin($parent.$index+'_'+$index)" class="container-fluid">
+									<fieldset class="form-group row">
+	    								<label for="password_{{$parent.$index+'_'+$index}}" class="col-sm-2 form-control-label">Password</label>
+	    								<div class="col-sm-10">
+	    									<input type="text" class="form-control" id="password_{{$parent.$index+'_'+$index}}" ng-model="login.password">
+	    								</div>
+	    							</fieldset>
+	    							<fieldset class="form-group row">
+	    								<label for="st_{{$parent.$index+'_'+$index}}" class="col-sm-2 form-control-label">Security Token</label>
+	    								<div class="col-sm-10">
+	    									<input type="text" id="st_{{$parent.$index+'_'+$index}}" ng-model="login.securityToken" class="form-control" >
+	    								</div>
+									</fieldset>
+									<button type="submit" class="btn btn-danger" ng-click="remove(login)">Delete</button>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+<div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+
+
+		div class="container-fluid" ng-repeat="group in groups">
+			<h3>{{group}}</h3>
+			<ul>
+				<li ng-repeat="(key,login) in logins | group:group">
+					<a ng-click="openCred(login)">{{key}}</a> &nbsp; <a ng-click="edit(login)">edit</a> &nbsp; <a ng-click="remove(login)">del</a>
+					<div>
+						<div>Password: <input type="text" ng-model="login.password"></div>
+						<div>Security Token: <input type="text" ng-model="login.securityToken"></div>
+					</div>
+				</li>
+			</ul>
+		</div-->
+		<div id="importsection">
+			<div class="input-group">
+				<input type="textarea" height="3" ng-model="xmlvalue" class="form-control" placeholder="Chrome's Force.com Logins">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="button"  ng-click="importFromForceCom()">Import</button>
+				</span>
+			</div>
+		</div>
+		<script src="js/xml2json.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/ngStorage.min.js"></script>
+		<script src="js/storage.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script-->
+	</body>
+</html>

@@ -1,0 +1,16 @@
+/*ul {
+	padding-left: 0;
+}
+li {
+	list-style-type: none;
+}*/
+
+.edit-login {
+	display: none;
+}
+
+.login-block {
+ 	/*white-space: nowrap;
+ 	overflow: hidden;
+ 	text-overflow: ellipses;*/
+}
